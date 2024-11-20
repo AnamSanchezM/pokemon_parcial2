@@ -10,13 +10,23 @@ import { PokemonDetailDto } from '../pokemonDetailDto';
 })
 export class Pokemon_listarComponent implements OnInit {
   pokemons: Array<PokemonDetailDto> = [];
+  selected: boolean = false;
+  selectedPokemon!: PokemonDetailDto;
+
   constructor(private pokemonService: PokemonService) { }
 
   getPokemons(): void {
     this.pokemons = this.pokemonService.getPokemons();
   }
 
-  
+  selectPokemon(pokemon: PokemonDetailDto): void {
+    if (this.selectedPokemon === pokemon) {
+      this.selected = !this.selected;
+    } else {
+      this.selected = true;
+      this.selectedPokemon = pokemon;
+    }
+  }
 
   ngOnInit(): void {
     this.getPokemons();
