@@ -1,3 +1,23 @@
-<p>
-  Pokemon_listar works!
-</p>
+<hr/>
+<div class="container-fluid">
+  <!-- Sección de listado -->
+  <h2>Pokémon</h2>
+  <!-- Tarjetas de Pokémon -->
+  <div class="row">
+    <div class="col mb-2" *ngFor="let pokemon of pokemons">
+      <div class="card p-2" style="width: 20rem; height: 25rem;">
+        <img
+          class="card-img-top"
+          src="{{ pokemon.sprites.front_default }}"
+          alt="Imagen del Pokémon {{ pokemon.id }}"
+        />  
+        <div class="card-body">
+          <h5 class="card-title">{{ pokemon.name}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

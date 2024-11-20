@@ -13,13 +13,14 @@ export class Pokemon_listarComponent implements OnInit {
   constructor(private pokemonService: PokemonService) { }
 
   getPokemons(): void {
-    this.pokemonService.getPokemons()
+    this.pokemons = this.pokemonService.getPokemons();
   }
+
+  
 
   ngOnInit(): void {
     this.getPokemons();
   }
-
 }
 
 
